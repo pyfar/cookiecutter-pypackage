@@ -434,6 +434,17 @@ def test_install_libsndfile1(cookies, install_libsndfile1):
         else:
             assert expected not in text
 
+        file_handle = open(os.path.join(
+            result.project_path, '.readthedocs.yml'), 'r')
+        # compare
+        text = re.sub(
+            r'\n *\n', '\n\n', file_handle.read(), flags=re.MULTILINE)
+        expected = '  apt_packages:'
+        if install_libsndfile1 == 'y':
+            assert expected in text
+        else:
+            assert expected not in text
+
 
 @pytest.mark.parametrize("file", [
     'docs/conf.py',
