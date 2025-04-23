@@ -165,7 +165,6 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.8"
                 - "3.9"
                 - "3.10"
                 - "3.11"
@@ -176,7 +175,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
 
@@ -184,7 +183,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
 
@@ -192,7 +191,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
 
@@ -200,7 +199,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
 
@@ -212,7 +211,6 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.8"
                 - "3.9"
                 - "3.10"
                 - "3.11"
@@ -230,7 +228,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
           filters:
@@ -244,7 +242,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
           filters:
@@ -258,7 +256,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
           filters:
@@ -272,7 +270,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - "3.9"
+                - "3.13"
           requires:
             - build_and_test
             - ruff
