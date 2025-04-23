@@ -18,6 +18,7 @@
   "use_pyfar": "y",
   "use_black": "n",
   "install_libsndfile1": "n",
+  "new_project": "y",
   "use_pypi_deployment_with_ci": "y",
   "add_pyup_badge": "y",
   "minimum_python_version": "3.9",
