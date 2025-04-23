@@ -22,6 +22,7 @@
   "add_pyup_badge": "y",
   "minimum_python_version": "3.9",
   "default_python_version": "3.13",
+  "keywords": "'acoustics','pyfar'",
   "command_line_interface": ["No command-line interface", "Click", "Argparse"],
   "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
   "_valid_versions": {
