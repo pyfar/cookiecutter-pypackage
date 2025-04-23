@@ -1,7 +1,7 @@
 [project]
 name = "pyfar"
 version = "0.1.0"
-description = "Project for data formats in acoustics."
+description = "The python package for acoustics research (pyfar) offers classes to store audio data, filters, coordinates, and orientations. It also contains common functions for digital audio signal processing and plotting audio signals."
 readme = "README.md"
 license = {file = "LICENSE"}
 requires-python = ">=3.8"

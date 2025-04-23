@@ -11,7 +11,7 @@
    history
 
 
-{{ cookiecutter.project_short_description }}
+{{ cookiecutter.project_long_description }}
 
 .. grid:: 1 2 2 2
     :gutter: 4
