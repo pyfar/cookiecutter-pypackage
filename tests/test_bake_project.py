@@ -202,7 +202,9 @@ def test_bake_with_and_wo_circle_ci(cookies, use_circle_ci, expected):
 def test_bake_with_and_wo_packages(cookies, package, input, expected):
     with bake_in_temp_dir(
         cookies,
-        extra_context={f'use_{package}': input}
+        extra_context={
+            f'use_{package}': input,
+            'keywords': ''}
     ) as result:
         assert os.path.isdir(result.project_path)
         requirements_path = open(os.path.join(
