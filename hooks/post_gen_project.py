@@ -20,3 +20,9 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.use_circle_ci }}' != 'y':
         rmtree('.circleci')
+
+    if '{{ cookiecutter.new_project }}' != 'y':
+        remove_file(os.path.join(
+            '{{cookiecutter.project_slug}}', '{{cookiecutter.project_slug}}.py'))
+        remove_file(os.path.join(
+            'docs', 'modules', 'pyfar.rst'))
