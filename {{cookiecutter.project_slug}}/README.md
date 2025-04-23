@@ -13,7 +13,7 @@
 
 
 {%- endif %}
-{{ cookiecutter.project_short_description }}
+{{ cookiecutter.project_long_description }}
 
 Getting Started
 ===============

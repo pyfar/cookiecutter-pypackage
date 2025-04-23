@@ -98,7 +98,7 @@ jobs:
       - checkout
       - run:
           name: Install System Dependencies
-          command: sudo apt-get update && sudo apt-get install -y libsndfile1 texlive-latex-extra dvipng
+          command: sudo apt-get update && sudo apt-get install -y libsndfile1
       - run:
           name: install dependencies
           command: pip install ".[tests]"

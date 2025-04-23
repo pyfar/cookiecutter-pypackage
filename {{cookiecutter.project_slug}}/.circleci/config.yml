@@ -103,7 +103,7 @@ jobs:
       {% if cookiecutter.install_libsndfile1 == 'y' -%}
       - run:
           name: Install System Dependencies
-          command: sudo apt-get update && sudo apt-get install -y libsndfile1 texlive-latex-extra dvipng
+          command: sudo apt-get update && sudo apt-get install -y libsndfile1
 {%- endif %}
       - run:
           name: install dependencies
