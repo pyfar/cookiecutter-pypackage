@@ -3,7 +3,7 @@
 * cookiecutter-pypackage version:
 * Python version:
 * Operating System:
-* Did you install pyfar via pip:
+* Did you install cookiecutter-pypackage via pip:
 
 ## Description
 

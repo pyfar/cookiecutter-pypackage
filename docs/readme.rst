@@ -1,3 +1,4 @@
-.. _readme:
+Getting Started
+===============
 
-.. include:: ../README.rst
+.. mdinclude:: ../README.md

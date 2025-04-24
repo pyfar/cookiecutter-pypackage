@@ -1,8 +1,0 @@
-pytest
-cookiecutter
-pytest-cookies
-alabaster
-watchdog
-ruff
-sphinx
-numpy
