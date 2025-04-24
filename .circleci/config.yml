@@ -42,7 +42,7 @@ jobs:
           command: pip install ".[tests]"
       - run:
           name: Run tests
-          command: pytest
+          command: pytest tests
 
   ruff:
     parameters:
