@@ -1,0 +1,20 @@
+name: trigger main push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  trigger:
+    strategy:
+      matrix:
+        repo: ['pyfar/pyfar']
+    runs-on: ubuntu-latest
+    steps:
+      - name: trigger main push to pyfar
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.create_pr_secret }}
+          repository: ${{ matrix.repo }}
+          event-type: pull_master
