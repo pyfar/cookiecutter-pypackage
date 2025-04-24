@@ -111,7 +111,7 @@ Click on the ``Add project`` button. You should find your project ``mypackage`` 
 .. _`Read the Docs`: https://readthedocs.org/
 
 Step 7: Add repo to the Gallery
-----------------------
+-------------------------------
 
 No the `pyfar gallery`_ header need to be updated, create a pull request which adds the new package into the `header.rst`_ file.
 After this is merged all other documentations of the packages have to rebuild. In this way the new package will be listed in the gallery and all packages headers.
