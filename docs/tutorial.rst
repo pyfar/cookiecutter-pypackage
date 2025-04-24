@@ -119,8 +119,6 @@ This will:
 * Encrypt your PyPI password in your Travis config.
 * Activate automated deployment on PyPI when you push a new tag to master branch.
 
-See :ref:`travis-pypi-setup` for more information.
-
 .. _`Travis CI com`: https://travis-ci.com/
 
 
@@ -170,6 +168,6 @@ Here's a release checklist you can use: https://github.com/audreyfeldroy/cookiec
 Having problems?
 ----------------
 
-Visit our :ref:`troubleshooting` page for help. If that doesn't help, go to our `Issues`_ page and create a new Issue. Be sure to give as much information as possible.
+Go to our `Issues`_ page and create a new Issue. Be sure to give as much information as possible.
 
 .. _`Issues`: https://github.com/audreyfeldroy/cookiecutter-pypackage/issues

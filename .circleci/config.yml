@@ -102,49 +102,6 @@ jobs:
           name: Run tests
           command: pytest tests -W error::DeprecationWarning
 
-  test_pypi_publish:
-    parameters:
-      version:
-        description: "version tag"
-        default: "latest"
-        type: string
-    executor:
-      name: python-docker
-      version: <<parameters.version>>
-    steps:
-      - checkout
-      
-      - run:
-          name: install dependencies
-          command: pip install ".[deploy]"
-      - run:
-          name: deploy
-          command: |  # create whl, install twine and publish to Test PyPI
-            python -m build
-            twine check dist/*
-
-  run_pypi_publish:
-    parameters:
-      version:
-        description: "version tag"
-        default: "latest"
-        type: string
-    executor:
-      name: python-docker
-      version: <<parameters.version>>
-    steps:
-      - checkout
-      
-      - run:
-          name: install dependencies
-          command: pip install ".[deploy]"
-      - run:
-          name: deploy
-          command: |  # create whl, install twine and publish to Test PyPI
-            python -m build
-            twine check dist/*
-            twine upload dist/*
-
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -185,13 +142,6 @@ workflows:
           requires:
             - build_and_test
 
-      - test_pypi_publish:
-          matrix:
-            parameters:
-              version:
-                - "3.13"
-          requires:
-            - build_and_test
 
   test_and_publish:
     # Test and publish on new git version tags
@@ -249,23 +199,6 @@ workflows:
                 - "3.13"
           requires:
             - build_and_test
-          filters:
-            branches:
-              ignore: /.*/
-            # only act on version tags
-            tags:
-              only: /^v[0-9]+(\.[0-9]+)*$/
-
-      - run_pypi_publish:
-          matrix:
-            parameters:
-              version:
-                - "3.13"
-          requires:
-            - build_and_test
-            - ruff
-            - test_documentation_build
-            - test_deprecation_warnings
           filters:
             branches:
               ignore: /.*/
