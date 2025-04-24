@@ -73,10 +73,8 @@ exclude = [
     ".git",
     "docs",
     "*cookiecutter.project_slug*",
-    "*.md",
 ]
 include = [
-    "README.md",
     "pyproject.toml",
     "tests",
 ]
