@@ -341,7 +341,6 @@ def test_bake_workflow_issue(cookies):
 
 
 @pytest.mark.parametrize("file", [
-    '.github/workflows/create_issue_if_cookiecutter.yml',
     '.github/ISSUE_TEMPLATE.md',
     '.github/PULL_REQUEST_TEMPLATE.md',
     'CONTRIBUTING.rst',
