@@ -174,24 +174,34 @@ if not os.path.exists(html_logo):
     shutil.copyfile(
         'resources/logos/pyfar_logos_fixed_size_pyfar.png', html_logo)
 
+
 # replace imkar hard link to internal link
 with open("_static/header.rst", "rt") as fin:
+    # collect lines in a list
+    lines = [line for line in fin]
+    
+    # find line where pyfar package is mentioned, to determine the start of 
+    # the packages list in the header
+    n_line_pyfar = 0
+    for i, line in enumerate(lines):
+        if 'https://pyfar.readthedocs.io' in line:
+            # remove the 4 lines at the top, which do not include items
+            n_line_pyfar = i - 4
+            break
+
+    # replace readthedocs link with internal link to this documentation
+    lines_mod = [
+        line.replace(f'https://{project}.readthedocs.io', project) for line in lines]
+    
+    # add this documentation link to the end of the list, so that it is in the
+    # doc tree
+    contains_project = any(project in line for line in lines_mod)
+    lines_mod.append(f'   {project} <{project}>\n')
+
     with open("header.rst", "wt") as fout:
-        lines = [line.replace(f'https://{project}.readthedocs.io', project) for line in fin]
-        contains_project = any(project in line for line in lines)
+        fout.writelines(lines_mod)
 
-        fout.writelines(lines)
-
-        # add project to the list of projects if not in header
-        if not contains_project:
-            fout.write(f'   {project} <{project}>\n')
-        
-        # count the number of gallery headings
-        count_gallery_headings = np.sum(
-            ['https://pyfar-gallery.readthedocs.io' in line for line in lines])
-
-
-# set dropdown header after gallery headings
-html_theme_options['header_links_before_dropdown'] = count_gallery_headings+1
+# set dropdown header at pyfar appearance
+html_theme_options['header_links_before_dropdown'] = n_line_pyfar
 
 
