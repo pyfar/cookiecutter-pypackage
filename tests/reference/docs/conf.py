@@ -196,7 +196,8 @@ with open("_static/header.rst", "rt") as fin:
     # add this documentation link to the end of the list, so that it is in the
     # doc tree
     contains_project = any(project in line for line in lines_mod)
-    lines_mod.append(f'   {project} <{project}>\n')
+    if not contains_project:
+        lines_mod.append(f'   {project} <{project}>\n')
 
     with open("header.rst", "wt") as fout:
         fout.writelines(lines_mod)
