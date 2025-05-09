@@ -189,6 +189,12 @@ with open("_static/header.rst", "rt") as fin:
             n_line_pyfar = i - 4
             break
 
+    if n_line_pyfar < 1:	
+        raise ValueError(
+            "Could not find the line where pyfar package is mentioned. "
+            "Please check the header.rst file."
+        )
+    
     # replace readthedocs link with internal link to this documentation
     lines_mod = [
         line.replace(f'https://{project}.readthedocs.io', project) for line in lines]
