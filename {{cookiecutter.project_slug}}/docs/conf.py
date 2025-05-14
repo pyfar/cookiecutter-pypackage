@@ -178,40 +178,51 @@ if not os.path.exists(html_logo):
         'resources/logos/pyfar_logos_fixed_size_pyfar.png', html_logo)
 
 
-# replace {{ cookiecutter.project_slug }} hard link to internal link
+# -- modify downloaded header file from the gallery to   ----------------------
+# -- aline with the local toctree ---------------------------------------------
+
+# read the header file from the gallery
 with open("_static/header.rst", "rt") as fin:
-    # collect lines in a list
     lines = [line for line in fin]
-    
-    # find line where pyfar package is mentioned, to determine the start of 
-    # the packages list in the header
-    n_line_pyfar = 0
-    for i, line in enumerate(lines):
-        if 'https://pyfar.readthedocs.io' in line:
-            # remove the 4 lines at the top, which do not include items
-            n_line_pyfar = i - 4
-            break
-    
-    if n_line_pyfar < 1:	
-        raise ValueError(
-            "Could not find the line where pyfar package is mentioned. "
-            "Please check the header.rst file."
-        )
 
-    # replace readthedocs link with internal link to this documentation
-    lines_mod = [
-        line.replace(f'https://{project}.readthedocs.io', project) for line in lines]
-    
-    # add this documentation link to the end of the list, so that it is in the
-    # doc tree
-    contains_project = any(project in line for line in lines_mod)
-    if not contains_project:
-        lines_mod.append(f'   {project} <{project}>\n')
+# replace readthedocs link with internal link to this documentation
+lines_mod = [
+    line.replace(f'https://{project}.readthedocs.io', project) for line in lines]
 
-    with open("header.rst", "wt") as fout:
-        fout.writelines(lines_mod)
+# if not found, add this documentation link to the end of the list, so that
+# it is in the doc tree
+contains_project = any(project in line for line in lines_mod)
+if not contains_project:
+    lines_mod.append(f'   {project} <{project}>\n')
 
-# set dropdown header at pyfar appearance
-html_theme_options['header_links_before_dropdown'] = n_line_pyfar
+# write the modified header file
+# to the doc\header.rst folder, so that it can be used in the documentation
+with open("header.rst", "wt") as fout:
+    fout.writelines(lines_mod)
 
 
+# -- find position of pyfar package in toctree --------------------------------
+# -- this is required to define the dropdown of Packages in the header --------
+
+# find line where pyfar package is mentioned, to determine the start of 
+# the packages list in the header
+n_line_pyfar = 0
+for i, line in enumerate(lines):
+    if 'https://pyfar.readthedocs.io' in line:
+        n_line_pyfar = i
+        break
+
+# the first 4 lines of the header file are defining the settings and a empty
+# line of the toctree, therefore we need to subtract 4 from the line number
+# of the pyfar package to get the correct position in the toctree
+n_toctree_pyfar = n_line_pyfar - 4
+
+if n_toctree_pyfar < 1:	
+    raise ValueError(
+        "Could not find the line where pyfar package is mentioned. "
+        "Please check the header.rst file in the gallery."
+    )
+
+# set dropdown header at pyfar appearance, so that pyfar is the first item in
+# the dropdown called Packages
+html_theme_options['header_links_before_dropdown'] = n_toctree_pyfar
