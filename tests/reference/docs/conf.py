@@ -217,7 +217,7 @@ n_toctree_pyfar = n_line_pyfar - 4
 if n_toctree_pyfar < 1:	
     raise ValueError(
         "Could not find the line where pyfar package is mentioned. "
-        "Please check the header.rst file."
+        "Please check the header.rst file in the gallery."
     )
 
 # set dropdown header at pyfar appearance, so that pyfar is the first item in
