@@ -1,3 +1,5 @@
+.. _prompts:
+
 Prompts
 =======
 
@@ -29,6 +31,9 @@ project_slug
 project_short_description
     A 1-sentence description of what your Python package does.
 
+project_long_description
+    A more detailed description of what your Python package does. This is used in the documentation.
+
 pypi_username
     Your Python Package Index account username.
 
@@ -44,25 +49,32 @@ use_circle_ci
     Whether to use `CircleCI <https://circleci.com/>`_.
 
 use_pytest
-    Whether to use `pytest <https://docs.pytest.org/en/latest/>`_
+    Whether to use `pytest <https://docs.pytest.org/en/latest/>`_ in your package.
 
 use_numpy
-    Whether to use `NumPy <http://www.numpy.org/>`_.
+    Whether to use `NumPy <http://www.numpy.org/>`_ in your package.
 
 use_matplotlib
-    Whether to use `Matplotlib <https://matplotlib.org/>`_.
+    Whether to use `Matplotlib <https://matplotlib.org/>`_ in your package.
 
 use_scipy
-    Whether to use `SciPy <https://www.scipy.org/>`_.
+    Whether to use `SciPy <https://www.scipy.org/>`_ in your package.
 
 use_pyfar
-    Whether to use `Pyfar <https://www.pyfar.org/>`_.
+    Whether to use `Pyfar <https://www.pyfar.org/>`_ in your package.
 
 use_black
-    Whether to use `Black <https://black.readthedocs.io/en/stable/>`_.
+    Whether to use `Black <https://black.readthedocs.io/en/stable/>`_ in your package.
 
-use_pypi_deployment_with_travis
-    Whether to use PyPI deployment with `Travis <https://travis-ci.org/>`_.
+install_libsndfile1
+    Whether we need to install libsndfile1 on ci before running the continues integrations.
+
+new_project
+    Whether we are creating a new project or we overwrite an existing one. If it is overwriting,
+    we don't overwrite existing implementations e.g. ``__init__.py`` files.
+
+use_pypi_deployment_with_ci
+    Whether to use PyPI deployment with `CircleCI <https://circleci.com/>`_.
 
 add_pyup_badge
     Whether to include a `pyup <https://github.com/pyupio/pyup>`_ badge
@@ -71,7 +83,10 @@ minimum_python_version
     The minimum Python version required to run the package.
 
 default_python_version
-    The default Python version to use in the package. Mainly used for CircleCI configuration.
+    The default Python version to use in the package. Mainly used for CircleCI or readthedocs configuration.
+
+keywords
+    A comma-separated list of keywords with Quotation Marks for your package. These are pasted in the ``pyproject.toml``.
 
 command_line_interface
     Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', 'Argparse', 'No command-line interface']
