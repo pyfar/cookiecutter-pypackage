@@ -26,6 +26,7 @@
   "keywords": "'acoustics','pyfar'",
   "command_line_interface": ["No command-line interface", "Click", "Argparse"],
   "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
+  "copyright": "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}",
   "_valid_versions": {
     "3.6": {
         "version_list": [
