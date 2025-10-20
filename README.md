@@ -18,19 +18,11 @@ Cookiecutter 1.4.0 or higher)
 
     pip install -U cookiecutter
 
-Generate a Python package project
+Generate a Python package project in a local folder
 
     cookiecutter https://github.com/pyfar/cookiecutter-pypackage.git
 
-Then:
-
-- Create a repo and put it there.
-- Add the repo to your Circleci account.
-- Add the repo to your [Read the Docs](https://readthedocs.com/) account + turn on the Read the Docs service hook and activate it for pull requests.
-- Release your package using bump-my-version (see [Contributing](https://pyfar-gallery.readthedocs.io/en/latest/contribute/contribution_packages.html#deploying)).
-- Activate your project on [pypi.org](https://pypi.org/).
-
-For more details, see the [cookiecutter-pypackage tutorial](https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html).
+For more details, including setting up automatic testing on CircleCi, publishing on pypi and documentation build on readthedocs, see the [cookiecutter-pypackage tutorial](https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html).
 
 ### Contributing
 
