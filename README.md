@@ -7,7 +7,7 @@
 
 This template is used to keep all pyfar packages consistent and
 to provide a good starting point for new packages. It is forked from
-`cookiecutter-pypackage <https://github.com/audreyfeldroy/cookiecutter-pypackage>`_.
+[audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage).
 
 Free software: BSD license
 
