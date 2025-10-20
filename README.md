@@ -11,17 +11,6 @@ to provide a good starting point for new packages. It is forked from
 
 Free software: BSD license
 
-### Getting Started
-
-The [pyfar workshop](https://mybinder.org/v2/gh/pyfar/gallery/main?labpath=docs/gallery/interactive/pyfar_introduction.ipynb)
-gives an overview of the most important pyfar functionality and is a good
-starting point. It is part of the [pyfar example gallery](https://pyfar-gallery.readthedocs.io/en/latest/examples_gallery.html)
-that also contains more specific and in-depth
-examples that can be executed interactively without a local installation by
-clicking the mybinder.org button on the respective example. The
-[pyfar documentation](https://pyfar.readthedocs.io) gives a detailed and complete overview of pyfar. All
-these information are available from [pyfar.org](https://pyfar.org).
-
 ### Quickstart
 
 Install the latest Cookiecutter if you haven't installed it yet (this requires
