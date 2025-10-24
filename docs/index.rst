@@ -1,4 +1,4 @@
 cookiecutter_pypackage
 ======================
 
-.. include:: header.rst
+.. include:: cookiecutter_pypackage.rst
