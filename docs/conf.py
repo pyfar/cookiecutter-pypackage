@@ -110,7 +110,7 @@ html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "navbar_end": ["navbar-icon-links", "theme-switcher"],
     "navbar_align": "content",
-    "header_links_before_dropdown": None,  # will be automatically set later based on headers.rst
+    "header_links_before_dropdown": 6,
     "header_dropdown_text": "Packages",  # Change dropdown name from "More" to "Packages"
     "icon_links": [
         {
@@ -143,7 +143,6 @@ link = f'https://github.com/pyfar/gallery/raw/{branch}/docs/'
 folders_in = [
     '_static/css/custom.css',
     '_static/favicon.ico',
-    '_static/header.rst',
     'resources/logos/pyfar_logos_fixed_size_cookiecutter_pypackage.png',
     ]
 
@@ -165,25 +164,5 @@ if not os.path.exists(html_logo):
         link, ['resources/logos/pyfar_logos_fixed_size_pyfar.png'])
     shutil.copyfile(
         'resources/logos/pyfar_logos_fixed_size_pyfar.png', html_logo)
-
-# replace cookiecutter_pypackage hard link to internal link
-with open("_static/header.rst", "rt") as fin:
-    with open("header.rst", "wt") as fout:
-        lines = [line.replace(f'https://{project}.readthedocs.io', project) for line in fin]
-        contains_project = any(project in line for line in lines)
-
-        fout.writelines(lines)
-
-        # add project to the list of projects if not in header
-        if not contains_project:
-            fout.write(f'   Create new Package <{project}>\n')
-        
-        # count the number of gallery headings
-        count_gallery_headings = np.sum(
-            ['https://pyfar-gallery.readthedocs.io' in line for line in lines])
-
-
-# set dropdown header after gallery headings
-html_theme_options['header_links_before_dropdown'] = count_gallery_headings+1
 
 
