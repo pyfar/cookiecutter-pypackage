@@ -22,7 +22,7 @@ Generate a Python package project in a local folder
 
     cookiecutter https://github.com/pyfar/cookiecutter-pypackage.git
 
-For more details, including setting up automatic testing on CircleCiI publishing on pypi and documentation build on readthedocs, see the [cookiecutter-pypackage tutorial](https://pyfar-cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html).
+For more details, including setting up automatic testing on CircleCi, publishing on pypi and documentation build on readthedocs, see the [cookiecutter-pypackage tutorial](https://pyfar-cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html).
 
 ### Contributing
 
