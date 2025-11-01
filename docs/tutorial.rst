@@ -94,7 +94,7 @@ Step 5: Set Up Circle Ci
 
 Login using your Github credentials. It may take a few minutes for CircleCi to load up a list of all your GitHub repos. They in the Projects environment.
 
-Add the public repo to your CircleCI account by clicking ``Set Up Project`` next to the ``mypackage`` repo. Choose the ``.circleci/config.yml`` file and the ``main`` brach and click ``Set Up Project``. No need to do further settings.
+Add the public repo to your CircleCI account by clicking ``Set Up Project`` next to the ``mypackage`` repo. Choose the ``.circleci/config.yml`` file and the ``main`` branch and click ``Set Up Project``. No need to do further settings.
 
 You can now push to your GitHub repo and CircleCI will automatically run the tests. You can see the status of your tests in the CircleCI dashboard and on Github.
 
