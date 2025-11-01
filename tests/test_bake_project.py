@@ -80,7 +80,7 @@ def test_bake_with_defaults(cookies):
         found_toplevel_files = [
             f for f in os.listdir(result.project_path)]
         assert 'pyproject.toml' in found_toplevel_files
-        assert 'your_python_project' in found_toplevel_files
+        assert 'mypackage' in found_toplevel_files
         assert 'tests' in found_toplevel_files
 
 
@@ -289,7 +289,7 @@ def test_bake_gitignore_with_paths(cookies):
             result.project_path, '.gitignore'), 'r')
         assert len(re.findall(
             "\ndocs/resources/logos/"
-            "pyfar_logos_fixed_size_your_python_project.png\n",
+            "pyfar_logos_fixed_size_mypackage.png\n",
             file.read())) == 1
 
 
@@ -299,9 +299,9 @@ def test_bake_doc_settings(cookies):
         assert result.exit_code == 0
         assert result.exception is None
 
-        # test for incident in docs/your_python_project.rst
+        # test for incident in docs/mypackage.rst
         file = open(os.path.join(
-            result.project_path, 'docs', 'your_python_project.rst'), 'r')
+            result.project_path, 'docs', 'mypackage.rst'), 'r')
         assert len(re.findall(
             "Getting Started",
             file.read())) == 1
@@ -321,7 +321,7 @@ def test_bake_doc_settings(cookies):
             "\n    'sphinx_reredirects',\n",
             file_contend)) == 1
         assert len(re.findall(
-            "resources/logos/pyfar_logos_fixed_size_your_python_project.png",
+            "resources/logos/pyfar_logos_fixed_size_mypackage.png",
             file_contend)) == 2
 
 
@@ -364,7 +364,7 @@ def test_vs_pyfar_development(cookies, file):
         url = link + file
         pyfar_file = http.request("GET", url).data
 
-        # test for incident in docs/your_python_project.rst
+        # test for incident in docs/mypackage.rst
         file = open(os.path.join(
             result.project_path, file), 'r')
         # compare
@@ -398,7 +398,7 @@ def test_vs_reference_file(cookies, file):
             os.path.dirname(os.path.abspath(__file__)),
             'reference', file), 'r')
 
-        # test for incident in docs/your_python_project.rst
+        # test for incident in docs/mypackage.rst
         file_handle = open(os.path.join(
             result.project_path, file), 'r')
         # compare
@@ -423,7 +423,7 @@ def test_install_libsndfile1(cookies, install_libsndfile1):
         assert result.exit_code == 0
         assert result.exception is None
 
-        # test for incident in docs/your_python_project.rst
+        # test for incident in docs/mypackage.rst
         file_handle = open(os.path.join(
             result.project_path, '.circleci/config.yml'), 'r')
 
@@ -466,7 +466,7 @@ def test_doc_conf_vs_reference_file(cookies, file):
             'reference', file), 'r')
         print(result.project_path)
 
-        # test for incident in docs/your_python_project.rst
+        # test for incident in docs/mypackage.rst
         file_handle = open(os.path.join(
             result.project_path, file), 'r')
         print(result.project_path)
