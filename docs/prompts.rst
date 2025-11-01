@@ -26,7 +26,7 @@ project_name
     The name of your new Python package project. This is used in documentation, so spaces and any characters are fine here.
 
 project_slug
-    The namespace of your Python package. This should be Python import-friendly. Typically, it is the slugified version of project_name. Note: your PyPi project and Travis links will use project_slug, so change those in the README afterwards.
+    The namespace of your Python package. This should be Python import-friendly. Typically, it is the slugified version of project_name. Note: your PyPi project and CircleCI links will use project_slug, so change those in the README afterwards.
 
 project_short_description
     A 1-sentence description of what your Python package does.
@@ -44,6 +44,9 @@ Options
 -------
 
 The following package configuration options set up different features for your project.
+
+logo_path_gallery
+    The path to the logo image within the pyfar gallery docs repository https://github.com/pyfar/gallery/tree/main/docs. If left empty, the standard pyfar logo will be used.
 
 use_circle_ci
     Whether to use `CircleCI <https://circleci.com/>`_.
@@ -77,7 +80,7 @@ use_pypi_deployment_with_ci
     Whether to use PyPI deployment with `CircleCI <https://circleci.com/>`_.
 
 add_pyup_badge
-    Whether to include a `pyup <https://github.com/pyupio/pyup>`_ badge
+    Whether to include a `pyup <https://github.com/pyupio/pyup>`_ badge.
 
 minimum_python_version
     The minimum Python version required to run the package.
