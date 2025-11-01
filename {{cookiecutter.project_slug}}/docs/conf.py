@@ -58,6 +58,7 @@ master_doc = 'index'
 project = '{{ cookiecutter.project_name }}'
 copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
 author = "{{ cookiecutter.full_name }}"
+project_slug = {{ cookiecutter.project_slug }}
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -189,13 +190,13 @@ with open("_static/header.rst", "rt") as fin:
 
 # replace readthedocs link with internal link to this documentation
 lines_mod = [
-    line.replace(f'https://{project}.readthedocs.io', project) for line in lines]
+    line.replace(f'https://{project_slug}.readthedocs.io', project_slug) for line in lines]
 
 # if not found, add this documentation link to the end of the list, so that
 # it is in the doc tree
-contains_project = any(project in line for line in lines_mod)
+contains_project = any(project_slug in line for line in lines_mod)
 if not contains_project:
-    lines_mod.append(f'   {project} <{project}>\n')
+    lines_mod.append(f'   {project} <{project_slug}>\n')
 
 # write the modified header file
 # to the doc\header.rst folder, so that it can be used in the documentation
