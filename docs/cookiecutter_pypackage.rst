@@ -9,7 +9,6 @@ pyfar cookiecutter pypackage
    tutorial
    prompts
    contributing
-   history
 
 
 Cookiecutter template for pyfar Python packages.
