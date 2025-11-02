@@ -477,3 +477,24 @@ def test_doc_conf_vs_reference_file(cookies, file):
             r'\n *\n', '\n\n', reference_file.read(), flags=re.MULTILINE)
         npt.assert_string_equal(text, text_ref)
 
+
+@pytest.mark.parametrize("copyright_opt", [
+    '2025, The pyfar developers',
+    '2020, The developers',
+    ])
+def test_cookie_copyright(cookies, copyright_opt):
+    with bake_in_temp_dir(
+            cookies,
+            extra_context={
+                'project_name': 'pyfar',
+                'copyright': copyright_opt,
+                }) as result:
+        assert os.path.isdir(result.project_path)
+        assert result.exit_code == 0
+        assert result.exception is None
+
+        file = open(os.path.join(
+            result.project_path, 'docs/conf.py'), 'r')
+        # compare
+        assert f"copyright = '{copyright_opt}'" in file.read()
+

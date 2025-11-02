@@ -56,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = '{{ cookiecutter.project_name }}'
-copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
+copyright = '{{ cookiecutter.copyright }}'
 author = "{{ cookiecutter.full_name }}"
 project_slug = "{{ cookiecutter.project_slug }}"
 
