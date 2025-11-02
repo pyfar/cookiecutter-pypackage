@@ -71,16 +71,3 @@ to provide a good starting point for new packages. It is forked from
         .. raw:: html
 
             <i class="fa-solid fa-pen icon-style"></i>
-
-    .. grid-item-card::
-        :link: history.html
-        :text-align: center
-        :padding: 0 0 3 3
-
-        **History**
-        ^^^^
-
-        .. raw:: html
-
-            <i class="fa-solid fa-clock-rotate-left icon-style">
-            </i>
